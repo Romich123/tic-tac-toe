@@ -26,3 +26,6 @@ cd server
 npm i
 npm start
 ```
+
+Dont't forget to create .env file
+.env must contain "SECRET" variable equal to any string
