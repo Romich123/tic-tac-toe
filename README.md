@@ -4,6 +4,7 @@ Simple implementation of tic tac toe game
 
 # Setup
 
+Install all dependencies
 Go to client folder and run
 
 `npm run build`
@@ -16,10 +17,12 @@ Go to server folder and run
 or just run this command sequence from root directory
 ```
 cd client
+npm i
 npm run build
 cd ..
 del /q ./server/src/public/*
 copy ./client/dist/* ./server/src/public
 cd server
+npm i
 npm start
 ```
