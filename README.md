@@ -9,7 +9,7 @@ Go to client folder and run
 
 `npm run build`
 
-Move files from /client/dist to /server/src/public
+Move files from /client/dist to /server/src/public \
 Go to server folder and run
 
 `npm start`
