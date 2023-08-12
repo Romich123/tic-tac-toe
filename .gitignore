@@ -2,6 +2,9 @@ server/node_modules
 client/node_modules
 server/.env
 
+server/public
+client/dist
+
 # Logs
 logs
 *.log
