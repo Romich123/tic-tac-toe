@@ -4,7 +4,7 @@ Simple implementation of tic tac toe game
 
 # Setup
 
-Install all dependencies
+Install all dependencies \
 Go to client folder and run
 
 `npm run build`
