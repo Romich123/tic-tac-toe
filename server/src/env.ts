@@ -5,7 +5,14 @@ const envSchema = z.object({
     SECRET: z.string(),
 })
 
-envSchema.parse(process.env)
+try {
+    envSchema.parse(process.env)
+} catch (e) {
+    throw new Error(`.env file doesn't exist or doesn't contain all necessary variables.
+    .env must contain:
+    PORT=number     # optional
+    SECRET="string" # necessary`)
+}
 
 declare global {
     namespace NodeJS {
