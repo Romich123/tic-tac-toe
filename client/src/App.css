@@ -1,8 +1,16 @@
 #root {
-    max-width: 1280px;
+    max-width: 400px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+@media screen and (max-width: 400px) {
+    #root {
+        width: 300px;
+    }
 }
 
 header {
@@ -20,7 +28,19 @@ h1 {
 }
 
 .auth {
+    width: 70%;
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+@media screen and (max-width: 440px) {
+    body {
+        font-size: 14px;
+    }
+
+    .heading {
+        font-size: 2.7rem;
+        margin: 0;
+    }
 }

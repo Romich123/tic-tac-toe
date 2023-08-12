@@ -11,8 +11,8 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
 
-    width: 400px;
-    height: 400px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     padding: 10px;
 
     background-color: var(--semi-transparent);
@@ -80,8 +80,19 @@
 
     padding: 6px;
     font-size: 3rem;
+    aspect-ratio: 1 / 1;
 
     cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+}
+
+@media screen and (max-width: 440px) {
+    .cell {
+        padding: 4px;
+        font-size: 3rem;
+    }
 }
 
 .cell.filled {
@@ -108,12 +119,14 @@
 .players {
     padding: 8px 6px;
 
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
 .find-game-button {
     margin-top: 20px;
+    width: 100%;
     font-size: 1.3rem;
     z-index: 100;
 }

@@ -1,6 +1,5 @@
 import { TicTacToeField, IGame, User, Move } from "../types"
 import { Result, error, success } from "../utils/Result"
-import { EventEmitter } from "events"
 import { TypedEvent } from "../utils/TypedEvent"
 
 function createField(): TicTacToeField {
@@ -132,16 +131,16 @@ export default class Game implements IGame {
     }
 
     getStatus(): "X" | "O" | "Draw" | null {
-        if (this.movesMade === 9) {
-            return "Draw"
-        }
-
         if (this.isWon("X")) {
             return "X"
         }
 
         if (this.isWon("O")) {
             return "O"
+        }
+
+        if (this.movesMade === 9) {
+            return "Draw"
         }
 
         return null

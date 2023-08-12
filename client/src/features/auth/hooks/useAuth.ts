@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-import { TypedEvent, observeOnly } from "../../../../../server/src/utils/TypedEvent"
 import socket, { onSocketConnected } from "../../socket"
 import { trpc } from "../../../trpc"
-import { InputUser } from "../../../../../server/src/types"
 import jwtDecode from "jwt-decode"
+import { InputUser } from "../../../types"
+import { TypedEvent, observeOnly } from "../../../utils/TypedEvent"
 
 const authed = {
     current: false,
@@ -43,7 +43,7 @@ export default function useAuth() {
 
     function connect(name: string) {
         onSocketConnected(() => {
-            trpc.userCreate.mutate({ name }).then((jwt) => {
+            trpc.userCreate.mutate({ name }).then((jwt: any) => {
                 glUser.current = jwtDecode(jwt)
                 newJwtEvent.emit(jwt)
 

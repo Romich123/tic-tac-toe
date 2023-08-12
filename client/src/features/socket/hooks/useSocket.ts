@@ -1,5 +1,5 @@
 import socket from ".."
-import { TypedEvent } from "../../../../../server/src/utils/TypedEvent"
+import { TypedEvent } from "../../../utils/TypedEvent"
 
 export default function useSocket() {
     const errorEvent = new TypedEvent<string>()

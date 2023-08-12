@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import { TicTacToeCell, TicTacToeField } from "../../../../server/src/types"
 import useGame from "../../features/game/hooks/useGame"
 import styles from "./game.module.css"
+import { TicTacToeCell, TicTacToeField } from "../../types"
 
 const toSvg: {
     [key in TicTacToeCell]: React.ReactNode

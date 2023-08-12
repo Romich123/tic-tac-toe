@@ -16,7 +16,7 @@ function App() {
     return (
         <>
             <header>
-                <h1>Tic Tac Toe</h1>
+                <h1 className="heading">Tic Tac Toe</h1>
                 <span className="player-count">{formatPlayers(userCount)}</span>
             </header>
             {connected ? <Game /> : <Auth onSubmit={() => setConnected(true)} />}

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import { IGame, InputUser } from "../../../../../server/src/types"
-import { TypedEvent, observeOnly } from "../../../../../server/src/utils/TypedEvent"
 import useAuth from "../../auth/hooks/useAuth"
 import socket from "../../socket"
+import { IGame, InputUser } from "../../../types"
+import { TypedEvent, observeOnly } from "../../../utils/TypedEvent"
 
 const glGame = {
     current: null as IGame | null,

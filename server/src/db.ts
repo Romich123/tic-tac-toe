@@ -1,6 +1,5 @@
 import Game from "./controllers/Game"
 import { User } from "./types"
-import { DeepReadonly } from "./utils/DeepReadonly"
 import jwt from "jsonwebtoken"
 
 const gamesWaiting: Game[] = []
@@ -14,7 +13,7 @@ export const db = {
         create: (data: { name: string }) => {
             const user: User = { id: userIdOffset++, ...data }
 
-            return jwt.sign(user, process.env.SECRET)
+            return jwt.sign(user, process.env.SECRET as string)
         },
     },
     game: {

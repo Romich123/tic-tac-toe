@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import { TypedEvent } from "../../../../../server/src/utils/TypedEvent"
 import socket from "../../socket"
+import { TypedEvent } from "../../../utils/TypedEvent"
 
 const userCount = {
     current: 0,
