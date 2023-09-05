@@ -15,6 +15,8 @@ function App() {
     const players = useTranslatedLabel("players", userCount)
     const online = useTranslatedLabel("online")
 
+    document.title = gameTitle
+
     return (
         <>
             <LanguageChange />
