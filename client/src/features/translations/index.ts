@@ -18,14 +18,20 @@ type PluralPhrases<PluralCount extends number> = {
 
 export type Translation<PluralCount extends number> = Readonly<PluralPhrases<PluralCount> & Phrases & { id: string }>
 
-let currentTranslation: Translation<number> = allTranslations.en
+let currentTranslation: Translation<number> = allTranslations[(localStorage.getItem("language") as Language) || "en"]
 
 const translationChange = new TypedEvent<Translation<number>>()
 
 export const translationChangeEvent = observeOnly(translationChange)
 
+export function getCurrentTranslation() {
+    return currentTranslation
+}
+
 export function changeLanguage(lang: Language) {
     currentTranslation = allTranslations[lang]
+
+    localStorage.setItem("language", lang)
 
     translationChange.emit(currentTranslation)
 }

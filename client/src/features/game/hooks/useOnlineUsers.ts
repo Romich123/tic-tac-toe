@@ -18,7 +18,8 @@ export default function useOnlineUsers() {
     const [count, setCount] = useState(userCount.current)
 
     useEffect(() => {
-        return countChanged.on(setCount).dispose
+        const disposable = countChanged.on(setCount)
+        return () => disposable.dispose()
     }, [])
 
     return count

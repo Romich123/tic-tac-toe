@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-import { changeLanguage, translationChangeEvent } from ".."
+import { changeLanguage, getCurrentTranslation, translationChangeEvent } from ".."
 import { Language, languagesArray } from "../allTranslation"
 
 export function useTranslation() {
-    const [currentLanguage, setCurrentLanguage] = useState<Language>("en")
+    const [currentLanguage, setCurrentLanguage] = useState<Language>(getCurrentTranslation().id as Language)
 
     useEffect(() => {
         translationChangeEvent.on((val) => setCurrentLanguage(val.id as Language))
