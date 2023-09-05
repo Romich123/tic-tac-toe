@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import useGame from "../../features/game/hooks/useGame"
 import styles from "./game.module.css"
 import { TicTacToeCell, TicTacToeField } from "../../types"
+import { useTranslatedLabel } from "../../features/translations/hooks/useTranslatedLabel"
 
 const toSvg: {
     [key in TicTacToeCell]: React.ReactNode
@@ -30,12 +31,19 @@ export function Game() {
 
     const [gameResult, setGameResult] = useState("")
 
+    const drawLabel = useTranslatedLabel("draw")
+    const loseLabel = useTranslatedLabel("youLost")
+    const winLabel = useTranslatedLabel("youWon")
+    const yourTurnLabel = useTranslatedLabel("yourTurn")
+    const enemyTurnLabel = useTranslatedLabel("enemyTurn")
+    const findGameLabel = useTranslatedLabel("findGame")
+
     useEffect(() => {
         const disposable = gameEndedEvent.once((result) => {
             if (result === "draw") {
-                setGameResult("Draw!")
+                setGameResult(drawLabel + "!")
             } else {
-                setGameResult(`You ${result.id === user?.id ? "won!" : "lost!"}`)
+                setGameResult((result.id === user?.id ? winLabel : loseLabel) + "!")
             }
         })
 
@@ -61,7 +69,7 @@ export function Game() {
 
     const gameEnded = !!gameResult
 
-    const text = gameResult || (game?.started ? `${ourMove ? "Your" : "Enemy"} turn` : "")
+    const text = gameResult || (game?.started ? `${ourMove ? yourTurnLabel : enemyTurnLabel}` : "")
     const textClassName = gameResult ? styles["game-ended"] : `${styles.turn} ${game ? (ourMove ? styles["user"] : styles["enemy"]) : ""}`
 
     return (
@@ -94,7 +102,7 @@ export function Game() {
             </div>
             {!game || gameEnded ? (
                 <button className={styles["find-game-button"]} onClick={findGame}>
-                    Find Game
+                    {findGameLabel}
                 </button>
             ) : null}
         </>

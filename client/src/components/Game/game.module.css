@@ -6,6 +6,7 @@
 }
 
 .field {
+    max-width: 400px;
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -117,6 +118,7 @@
 }
 
 .players {
+    max-width: 400px;
     padding: 8px 6px;
 
     width: 100%;
@@ -125,6 +127,7 @@
 }
 
 .find-game-button {
+    max-width: 400px;
     margin-top: 20px;
     width: 100%;
     font-size: 1.3rem;
