@@ -39,6 +39,7 @@ app.use(
 
 app.use(express.static(__dirname + "/public"))
 
-server.listen(3000, () => {
-    console.log("started on 3000")
+const port = Number(process.env.PORT || 3000)
+server.listen(port, () => {
+    console.log("started on " + port)
 })
