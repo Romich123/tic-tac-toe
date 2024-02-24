@@ -31,6 +31,11 @@
     right: 6px;
 }
 
+.options > * {
+    background-color: transparent;
+    padding: 0;
+}
+
 .options.closed {
     visibility: hidden;
 }

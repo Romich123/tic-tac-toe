@@ -19,7 +19,7 @@ export function LanguageChange() {
                 {allLangs
                     .filter((lang) => lang !== currentLang)
                     .map((lang) => (
-                        <div
+                        <button
                             key={lang}
                             onClick={() => {
                                 setLang(lang)
@@ -27,7 +27,7 @@ export function LanguageChange() {
                             }}
                         >
                             {lang}
-                        </div>
+                        </button>
                     ))}
             </div>
         </div>
