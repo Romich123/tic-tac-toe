@@ -34,7 +34,7 @@ export const allTranslations = {
             return 2
         },
         players: ["игрок", "игрока", "игроков"],
-        gameName: "Крестики Нолики",
+        gameName: "Крестики-Нолики",
         online: "в сети",
         nickname: "Псевдоним",
         joinGame: "Присоединиться",
